@@ -16,32 +16,32 @@ function playRound(playerSelection, computerSelection) {
     computerScore++;
     checkScore();
     computerScoreDisplay.textContent = computerScore;
-    scoreInfo.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+    scoreInfo.textContent = `You lost this round! ${computerSelection} beats ${playerSelection}`;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++;
     checkScore();
     playerScoreDisplay.textContent = playerScore;
-    scoreInfo.textContent = `You win ${playerSelection} beats ${computerSelection}`;
+    scoreInfo.textContent = `You won this round ${playerSelection} beats ${computerSelection}`;
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
     computerScore++;
     checkScore();
     computerScoreDisplay.textContent = computerScore;
-    scoreInfo.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+    scoreInfo.textContent = `You lost this round! ${computerSelection} beats ${playerSelection}`;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++;
     checkScore();
     playerScoreDisplay.textContent = playerScore;
-    scoreInfo.textContent = `You win ${playerSelection} beats ${computerSelection}`;
+    scoreInfo.textContent = `You won this round! ${playerSelection} beats ${computerSelection}`;
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
     computerScore++;
     checkScore();
     computerScoreDisplay.textContent = computerScore;
-    scoreInfo.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+    scoreInfo.textContent = `You lost this round! ${computerSelection} beats ${playerSelection}`;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
     checkScore();
     playerScoreDisplay.textContent = playerScore;
-    scoreInfo.textContent = `You win ${playerSelection} beats ${computerSelection}`;
+    scoreInfo.textContent = `You won this round ${playerSelection} beats ${computerSelection}`;
   } else scoreInfo.textContent = "This was a draw, please play one more.";
 }
 //set player selection and play a round when clicking a button.
@@ -87,13 +87,15 @@ function checkScore() {
     div.removeChild(playerScoreDisplay);
     div.removeChild(computerScoreDisplay);
     div.removeChild(line);
-    winner.textContent = "Congratulations, you beat the computer";
+    winner.textContent =
+      "Congratulations, you beat the computer. Refresh the page to play again";
     div.appendChild(winner);
   } else if (computerScore == 5) {
     div.removeChild(playerScoreDisplay);
     div.removeChild(computerScoreDisplay);
     div.removeChild(line);
-    winner.textContent = "Unfortunately, you lost against the computer";
+    winner.textContent =
+      "Unfortunately, you lost against the computer. Refresh the page to play again.";
     div.appendChild(winner);
   }
 }
